@@ -13,5 +13,5 @@ Some [link](www.google.com)
 xxx
 
 * list 1
-* list 2
+ * list 2
 
