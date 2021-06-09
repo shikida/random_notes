@@ -1,2 +1,3 @@
-# random_notes
-Some Random Notes 
+# Some title here
+## Some subtitle here
+Some _Random_ **Notes** 
