@@ -14,3 +14,9 @@
 * Testes unitarios
 * Configuracao 
 * Deployment
+* Risco associado a identidades
+* Tarefas e Automacao
+* Fontes de dados de conector
+* Fontes / Targets de atributos de identidade
+* Politicas de senhas
+* Policies (SoD, etc)
