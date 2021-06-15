@@ -23,8 +23,11 @@
    * crie templates de email
    * grupo de trabalho para receber email - degine um workgroup, define um email, direitos de diversos recursos (administrador de xxx, onde xxx é tudo)
    * processos de negocio
-     * 
+     * passo com catches=complete ele pega erros que ocorrerem no wf
+     * parta de Lifecycle Event - Leaver
+     * re-execução rodando um leaver e um joiner mais restritos (populações específicas)
    * definicao das populacoes
+     * Inteligencia - análises avançadas - salve o resultado como população
    * eventos de ciclo de vida
 
 # Parametros do workflow que sao usados 
@@ -41,3 +44,7 @@
 # Condições de disparo de joiner e leaver
    * Joiner: tipo de identidade, primeiro nome não nulo, último nome não nulo, status ativo, sem função birthright associada
    * Leaver: tipo de identidade, status inativo, com função de birthright associada
+
+# Buildplan de Joiner
+
+# Buildplan de Leaver
