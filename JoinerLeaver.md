@@ -46,5 +46,13 @@
    * Leaver: tipo de identidade, status inativo, com função de birthright associada
 
 # Buildplan de Joiner
+   * IdentityChangeEvent = wfcontext.getStepArguments().getEvent()
+   * Identity = event.getNewObject()
+   * Instancia um ProvisioningPlan
+   * Instancia um AccountRequest(AccountRequest.Operation.Modify, "IIQ", null, identity.getName())
+   * Instancia um AttributeRequest("assignedRoles", ProvisioningPlan.Operation.Set, assignments) onde assignments é um ArrayList de Strings contendo "ITAU Birthright"
+   * monta o plan e manda
+
+
 
 # Buildplan de Leaver
