@@ -53,6 +53,17 @@
    * Instancia um AttributeRequest("assignedRoles", ProvisioningPlan.Operation.Set, assignments) onde assignments é um ArrayList de Strings contendo "ITAU Birthright"
    * monta o plan e manda
 
-
-
 # Buildplan de Leaver
+   * Pega a identidade do mesmo jeito que o joiner
+   * remove roles
+     * Instancia AccountRequest(AccountRequest.Operation.Modify,"IIQ",null,identity.getName())
+     * Itera sobre identity.getRoleAssignments()
+     * Pra cada um, instancia AttributeRequest("assignedRoles",ProvisioningPlan.Operation.Remove,roleAssignment.getRoleName())
+   * remove entitlements
+     * Itera sobre identity.getAttributeAssignments()
+     * Instancia AccountRequest onde setApplication(account.getApplicationName()), setNativeIdentity(account.getNativeIdentity()) e setOperation(AccountRequest.Operation.Modify)
+     * Adiciona ao AccountRequest um ProvisioningPlan.AttributeRequest onde setName(attributeAssignment.getName()), setValue(attributeAssignment.getValue()) e setOp(ProvisioningPlan.Operation.Remove)
+   * remove contas
+     * Itera sobre identity.getLinks();
+     * Se a conta não é de fonte autoritativa (não pode remover)...
+     * instancia AccountRequest onde setApplication(account.getApplicationName()), setNativeIdentity(account.getNativeIdentity()) e setOperation(AccountRequest.Operation.Disable ou Delete)
