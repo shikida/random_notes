@@ -1,4 +1,4 @@
-   # Joiner e Leaver
+# Joiner e Leaver
    
    * Fonte autoritativa informa que identidade mudou de status
    * IIQ dispara joiner com birthright (role) ou leaver a partir de refresh identity com processar eventos habilitado, dispara o identity trigger
@@ -9,7 +9,7 @@
        * bloquear) 
    * Notificações com sucesso ou falha
    
-   # Construção
+# Construção
    
    * adicione atributo estendido na config do hibernate - classes/sailpoint/object/ApplicationExtended.xml
      * property name... type string... length... access=sailpoint.persistence.ExtendedPropertyAccessor index=spt... 
@@ -17,12 +17,27 @@
    * atualize BD - ../database/add_identityiq_extensions.mysql - ache o codigo gerado e atualize no bd
    * atualize i18n - classes/sailpoint/web/messages
    * reinicie
-   * importe atributo - ObjectConfig
-   * ative LCM
-   * crie birthright
+   * importe atributo - ObjectConfig - objectattribute name=... namedColumn=true displayName=att... editMode=Permanent
+   * ative LCM - importe o init-lcm.xml
+   * crie birthright - Pode ser um novo tipo de função (role), opcoes desmarcadas apenas sem deteccao automatica, sem perfil de direitos e sem atribuicao automatica com regra
    * crie templates de email
-   * grupo de trabalho para receber email
+   * grupo de trabalho para receber email - degine um workgroup, define um email, direitos de diversos recursos (administrador de xxx, onde xxx é tudo)
    * processos de negocio
+     * 
    * definicao das populacoes
    * eventos de ciclo de vida
-   * 
+
+# Parametros do workflow que sao usados 
+
+   * nomeUsuario
+   * identityRequestId
+   * nomeTarefa - "Processo de Joiner/Leaver para funcionario/terceiro", etc
+   * funcionalUsuario
+   * dataInicio - IdentityRequest.getCreated()
+   * dataFim - IdentityRequest.getVerified() ou getEndDate() (com falha, só chega até o verified)
+   * mensagemFalha
+   * comentarioSistema (detalhamento do que foi pedido a partir do TaskResult.getPlans() e getResult(), cada Plan tem um TargetIntegration e um NativeIdentity)
+
+# Condições de disparo de joiner e leaver
+   * Joiner: tipo de identidade, primeiro nome não nulo, último nome não nulo, status ativo, sem função birthright associada
+   * Leaver: tipo de identidade, status inativo, com função de birthright associada
