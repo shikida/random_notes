@@ -17,4 +17,3 @@ SPRights relevantes
 * ManageRules
 * FullAccessSystemConfig
 
-
