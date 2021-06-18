@@ -28,3 +28,4 @@ Na certificação, pode-se definir uma regra de exclusão para, por exemplo, ign
 
     items.removeAll(excludeItems)
     itemsToExclude.addAll(excludeItems)
+ 
