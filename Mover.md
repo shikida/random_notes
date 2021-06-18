@@ -42,3 +42,4 @@ funcao de Biz associada ao depto corrente é explicitamente removida            
 funcao de IT detectada e parte de funcao Biz atribuída é removida por RBAC       | Id requisita C. Id vai para 1 e ganha acessos. Id vai para 4, perde P1, P1P2P3 cert
 
 (xxx) Se houver periodo de contestacao, time machine nao funciona. Neste caso, em modo debug, liste os objetos do tipo certificacao por data de criacao desc, edite automaticClosingDate=activated, salve, execute perform maint para encerrar a certificacao
+
