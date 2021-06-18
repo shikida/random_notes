@@ -66,4 +66,4 @@
    * remove contas
      * Itera sobre identity.getLinks();
      * Se a conta não é de fonte autoritativa (não pode remover)...
-     * instancia AccountRequest onde setApplication(account.getApplicationName()), setNativeIdentity(account.getNativeIdentity()) e setOperation(AccountRequest.Operation.Disable ou Delete)
+     * instancia AccountRequest onde setApplication(account.getApplicationName()), setNativeIdentity(account.getNativeIdentity()) e setOperation(AccountRequest.Operation.Disable ou Delete) 
